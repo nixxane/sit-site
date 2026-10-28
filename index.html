@@ -78,10 +78,11 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
 	</div>
 	<p class="tag">A small, fast IPTV player. One C binary, no Electron, no database, no telemetry. Keyboard first, mouse friendly.</p>
 	<div class="buttons">
-		<a class="btn primary" href="https://github.com/nixxane/sit-site/releases/latest/download/sit-setup.exe">Download for Windows</a>
-		<a class="btn" href="https://github.com/nixxane/sit-site/releases">All downloads</a>
+		<a class="btn primary" href="https://github.com/nixxane/sit/releases/download/latest/sit-setup.exe">Download for Windows</a>
+		<a class="btn" href="https://github.com/nixxane/sit/releases">All downloads</a>
+		<a class="btn" href="https://github.com/nixxane/sit">Source</a>
 	</div>
-	<p class="note">Windows: run the installer and open sit from the Start menu. On first start, sit asks for your provider details. Linux, macOS and FreeBSD builds are not published yet.</p>
+	<p class="note">Windows: run the installer and open sit from the Start menu. On first start, sit asks for your provider details. Linux, macOS and FreeBSD: build from source.</p>
 </header>
 
 <h2>What it does</h2>
@@ -108,13 +109,21 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
 </table>
 <p class="note">The full list is in the man page, and the app shows key hints on screen.</p>
 
+<h2>Build from source</h2>
+<p>You need SDL2, libmpv, libcurl and zlib.</p>
+<pre><code>git clone https://github.com/nixxane/sit
+cd sit
+make
+sudo make install</code></pre>
+<p class="note">On Windows, build in an MSYS2 UCRT64 shell with <code>make OS=win</code>.</p>
+
 <h2>Your sources</h2>
 <p>Sources live in a tab-separated file: <code>%APPDATA%\sit\sources</code> on Windows, <code>~/.config/sit/sources</code> elsewhere.</p>
 <pre><code>name  xtream  http://provider:8080  username  password
 name  m3u     http://host/list.m3u   [guide.xml]</code></pre>
 <p class="note">sit does not provide any channels or content. You need your own provider.</p>
 
-<footer>sit is free software under the MIT/X license.</footer>
+<footer>sit is free software under the MIT/X license, see the LICENSE file in the <a href="https://github.com/nixxane/sit">repository</a>.</footer>
 </main>
 </body>
 </html>
